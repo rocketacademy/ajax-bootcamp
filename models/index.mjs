@@ -9,7 +9,7 @@ const config = allConfig[env];
 
 const db = {};
 
-let sequelize = new Sequelize(config.database, config.username, config.password, config);
+const sequelize = new Sequelize(config.database, config.username, config.password, config);
 
 db.Item = itemModel(sequelize, Sequelize.DataTypes);
 
