@@ -4,4 +4,8 @@ import initItemsController from './controllers/items.mjs';
 export default function bindRoutes(app) {
   const ItemsController = initItemsController(db);
   app.get('/items', ItemsController.index);
+  app.get('/item/:id', ItemsController.findItem);
+  app.get('/', (request, response) => {
+    response.render('home');
+  });
 }
